@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            style="@style/matchParent"
+            android:background="#d7d7d7"
+            android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/clHeader"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/clContent">
+
+            <com.andexert.library.RippleView
+                    android:id="@+id/rippleBack"
+                    rv_centered="true"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                        android:id="@+id/imgBack"
+                        android:padding="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_back"
+                        android:layout_centerInParent="true"/>
+            </com.andexert.library.RippleView>
+
+            <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/wrapContent"
+                    android:layout_width="0dp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:maxLines="1"
+                    android:text="Title"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/rippleBack"
+                    app:layout_constraintEnd_toStartOf="@+id/rippleRight"
+                    app:layout_constraintStart_toEndOf="@+id/rippleBack"
+                    app:layout_constraintTop_toTopOf="@+id/rippleBack"/>
+
+            <com.andexert.library.RippleView
+                    android:id="@+id/rippleRight"
+                    android:layout_width="50dp"
+                    rv_centered="true"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imgRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_defaut_avatar"
+                        app:srcCompat="@drawable/ic_defaut_avatar"
+                        app:riv_corner_radius="50dp"/>
+            </com.andexert.library.RippleView>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+                android:id="@+id/clContent"
+                style="@style/matchParent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/clHeader"/>
+    </LinearLayout>
+
+</layout>

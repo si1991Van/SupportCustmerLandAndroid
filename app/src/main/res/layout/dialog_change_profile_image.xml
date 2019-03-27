@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        style="@style/matchWrap"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/change_image_title"
+            android:textColor="@color/colorText21"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rippleCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:id="@+id/tvCamera"
+                style="@style/matchWrap"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="6sp"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:text="@string/change_image_camera"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rippleImageLibrary"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/rippleCamera"
+            app:layout_constraintStart_toStartOf="@+id/rippleCamera"
+            app:layout_constraintTop_toBottomOf="@+id/rippleCamera">
+
+            <TextView
+                android:id="@+id/tvImageLibrary"
+                style="@style/matchWrap"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="6sp"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:text="@string/change_image_gallery"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rippleCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rippleImageLibrary"
+            app:layout_constraintStart_toStartOf="@+id/rippleImageLibrary"
+            app:layout_constraintTop_toBottomOf="@+id/rippleImageLibrary">
+
+            <TextView
+                android:id="@+id/tvCancel"
+                style="@style/matchWrap"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="6sp"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:text="@string/text_cancel"
+                android:textColor="@color/colorText21"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </com.andexert.library.RippleView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

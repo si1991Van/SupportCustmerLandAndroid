@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/actionPhone"
+            android:icon="@drawable/ic_home_phone_select"
+            android:title="@string/tab_phone"/>
+    <item
+            android:id="@+id/actionHistory"
+            android:icon="@drawable/ic_home_history"
+            android:title="@string/tab_history"/>
+    <item
+            android:id="@+id/actionNewsPager"
+            android:icon="@drawable/ic_home_newspaper"
+            android:title="@string/tab_newpager"/>
+    <item
+            android:id="@+id/actionUser"
+            android:icon="@drawable/ic_home_user"
+            android:title="@string/tab_users"/>
+    <item
+            android:id="@+id/actionUtilities"
+            android:icon="@drawable/ic_home_utilities"
+            android:title="@string/tab_utilities"/>
+</menu>

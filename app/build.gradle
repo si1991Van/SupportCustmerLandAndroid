@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'V-TechHomes@123'
+            keyPassword 'V-TechHomes@123'
+            storeFile file('./keystory/realse/keystore.jks')
+            storePassword 'V-TechHomes@123'
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig{
+        applicationId "com.support.customer.lands"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            ext.enableCrashlytics = false
+        }
+    }
+
+    flavorDimensions "flavor"
+    productFlavors {
+        chplay {
+            dimension "flavor"
+        }
+        awesome {
+            dimension "flavor"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def project = "V-TechHomes"
+            def SEP = "_"
+            def flavor = variant.productFlavors[0].name
+            def buildType = variant.buildType.name
+            def version = "ver" + variant.versionName
+            def date = new Date();
+            def formattedDate = date.format('ddMMyy_HHmm')
+            def newApkName = project + SEP + flavor + SEP + buildType + SEP + version /*+ SEP + formattedDate*/ + ".apk"
+            outputFileName = newApkName
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v13'
+    }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // okhttp library for connect API
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    //
+    annotationProcessor 'com.android.databinding:compiler:3.1.4'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.afollestad.material-dialogs:core:0.9.4.5'
+    //    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'com.patrickpissurno:ripple-effect:1.3.1'
+    implementation 'com.bignerdranch.android:expandablerecyclerview:3.0.0-RC1'
+    implementation 'org.sufficientlysecure:html-textview:3.5'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    //FMC
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-database:16.0.6'
+}

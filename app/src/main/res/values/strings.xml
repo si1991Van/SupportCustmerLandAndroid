@@ -1,0 +1,150 @@
+<resources>
+    <string name="app_name">SupportCustomerLands</string>
+    <string name="text_app_name_permission">Phiên bản hệ thống 1.0 - Bản quyền thuộc về Hải Phát Land</string>
+
+    // alter dialog
+
+    <string name="alert_title_success">Thành công</string>
+    <string name="text_dialog_ok">Đồng ý</string>
+    <string name="text_cancel">Hủy</string>
+    <string name="alert_title_confirm">Xác nhận</string>
+    <string name="alert_title_error">Có lỗi xảy ra</string>
+    <string name="alert_title_inform">Thông báo</string>
+    <string name="text_no_internet_connection">Không có kết nối mạng, vui lòng kiểm tra kết nối mạng và thử lại</string>
+    <string name="text_cannot_connect_to_server">Không thể kết nối với máy chủ</string>
+    <string name="text_error">Có lỗi xảy ra trong quá trình xử lý.</string>
+    <string name="text_processing">Đang tải...</string>
+    <string name="text_cannot_fail_ratting">Bạn vui lòng cài đặt CHPlay cho điện thoại</string>
+    <string name="text_cannot_fail_email">Bạn vui lòng cài đặt cho điện thoại</string>
+    <string name="text_confirm_delete_image">Bạn có thực sự muốn xoá ảnh không?</string>
+    <string name="text_confirm_finish_app">Bạn có thực sự tắt ứng dụng không?</string>
+
+    <string name="profile_logout_confirm">Bạn có thực sự muốn đăng xuất không?</string>
+    //validate field
+    <string name="text_validate_require_field_email">Email không được để trống</string>
+    <string name="text_validate_email_invalid">Email không đúng định dạng</string>
+    <string name="text_validate_require_field_password">Mật khẩu không được để trống</string>
+    <string name="text_validate_require_field_confirm_password">Xác nhận mật khẩu không được để trống</string>
+    <string name="change_password_error_new_password_not_equal">Mật khẩu và mật khẩu xác nhận không giống nhau</string>
+    <string name="text_validate_require_field_name">Tên không được để trống</string>
+    <string name="text_validate_require_field_phone">Số điện thoại không được để trống</string>
+    <string name="text_validate_phone_invalid">Số điện thoại không đúng định dạng</string>
+    <string name="text_validate_birth_day">Ngày sinh không được để trống</string>
+    <string name="text_validate_id_number">Số CMTND không được để trống</string>
+    <string name="text_validate_require_field_old_password">Mật khẩu cũ không được để trống</string>
+    <string name="text_validate_require_field_new_password">Mật khẩu mới không được để trống</string>
+    <string name="text_validate_require_field_new_confirm_password">Xác nhận mật khẩu mới không được để trống</string>
+    <string name="text_validate_require_field_content">Nội dung không được để trống</string>
+    <string name="text_validate_require_field_address">Địa chỉ không được để trống</string>
+    <string name="text_choose_email_client">Chọn một email client</string>
+
+    <string name="text_no_data">Chưa có dữ liệu</string>
+    <string name="text_input_content_chat">Nhập tin nhắn</string>
+
+
+    //form login
+    <string name="text_title_form_login">Hệ thống chăm sóc khách hàng Hải Phát Land</string>
+    <string name="text_sign_in">Đăng nhập</string>
+    <string name="edit_text_account">Tài khoản</string>
+    <string name="edit_text_password">Mật khẩu</string>
+    <string name="text_forgot_password">Quên mật khẩu ?</string>
+    <string name="text_forgot_password_title">Quên mật khẩu</string>
+
+    //project
+    <string name="title_project">DỰ ÁN</string>
+    <string name="text_select_project">Lựa chọn dự án</string>
+
+    //home
+    <string name="tab_phone">Tổng đài</string>
+    <string name="tab_history">Giao dịch</string>
+    <string name="tab_newpager">dự án</string>
+    <string name="tab_users">Sale</string>
+    <string name="tab_utilities">Ký gửi</string>
+    //tab phone
+    <string name="txt_title_formation_phone">Tổng đài hỗ trợ khách hàng dự án</string>
+    <string name="txt_hotline">Hotline: %s</string>
+    <string name="txt_email">Email: %s</string>
+    <string name="txt_live_chat">Livechat với nhân viên\n
+        chăm sóc khách hàng - Hải Phát Land
+    </string>
+    <string name="txt_tab_history_title">LỊCH SỬ GIAO DỊCH</string>
+    <string name="txt_tab_news_paper_title">THÔNG BÁO</string>
+
+    //profile
+    <string name="txt_title_profile">THÔNG TIN TÀI KHOẢN</string>
+    <string name="txt_profile_update_information">Thông tin tài khoản</string>
+    <string name="txt_profile_change_password">Đổi mật khẩu</string>
+    <string name="txt_profile_booked">Đăt lịch thăm quan</string>
+    <string name="txt_profile_massage">Quản lý ký gửi</string>
+    <string name="txt_profile_setting">Cấu hình ứng dụng</string>
+    <string name="txt_profile_help_me">Trợ giúp</string>
+    <string name="txt_profile_share">Giới thiệu bạn bè</string>
+    <string name="txt_profile_ratting">Đánh giá ứng dụng</string>
+    <string name="txt_profile_send_email">Góp ý cho nhà phát triển</string>
+    <string name="txt_profile_info">Thông tin sản phẩm</string>
+    <string name="txt_profile_sign_out">ĐĂNG XUẤT</string>
+    <string name="txt_profile_account">Tài khoản</string>
+
+    <string name="txt_dialog_title_info_app">Thông tin ứng dụng</string>
+    <string name="txt_dialog_content">versionName 1.0</string>
+
+    // tab profil usere
+    <string name="txt_tab_user_title">NHÂN VIÊN HỖ TRỢ GIAO DỊCH DỰ ÁN</string>
+    <string name="txt_tab_user_header">Với mục tiêu phục vụ khách hàng ngày một tốt hơn, kính mong Quý khách hàng bớt
+        chút thời gian cho ý kiến đánh giá về chất lượng dịch vụ tư vấn và hỗ trợ của nhân viên kinh doanh Hải Phát
+        Land, cũng như phản hồi các vấn đề gặp phải trong quá trình tư vấn.\n\n
+
+        Nội dung Quý khách hàng phản hồi, đánh giá sẽ được chuyển trực tiếp đến bộ phận chăm sóc khách hàng của Hải Phát
+        Land nhằm đánh giá và nâng cao hơn nữa dịch vụ cho khách hàng.
+    </string>
+    <string name="txt_tab_user_ratting">Đánh giá nhân viên kinh doanh</string>
+    <string name="txt_tab_user_content_reply">Viết nội dung phản hồi ...</string>
+    <string name="txt_tab_user_send">GỬI</string>
+
+    //tab utilities
+
+    <string name="txt_tab_utilities_title">TIỆN ÍCH DỰ ÁN</string>
+    <string name="txt_tab_utilities_calculation_project_interest">TÍNH TOÁN LÃI SUẤT DỰ ÁN</string>
+    <string name="txt_tab_utilities_schedule">ĐẶT LỊCH THĂM QUAN DỰ ÁN</string>
+
+    //change password.
+    <string name="txt_change_password_title">Đổi mật khẩu</string>
+    <string name="txt_odl_password">Mật khẩu cũ</string>
+    <string name="txt_new_password">Mật khẩu mới</string>
+    <string name="txt_new_confirm_password">Xác nhận mật khẩu mới</string>
+    <string name="txt_change_password_save">Lưu lại</string>
+
+    //update information profile.
+    <string name="txt_update_information_title">Cập nhật thông tin</string>
+    <string name="txt_full_name">Họ và tên</string>
+    <string name="txt_birthday">Ngày sinh</string>
+    <string name="txt_update_email">email</string>
+
+    <string name="change_image_select_file">Chọn ảnh</string>
+    <string name="change_image_title">Đổi ảnh đại diện</string>
+    <string name="change_image_camera">Sử dụng máy ảnh</string>
+    <string name="change_image_gallery">Sử dụng thư viện ảnh</string>
+
+    // tab history
+    <string name="txt_status_success">đã thanh toán</string>
+    <string name="txt_status_unfinished">chưa thanh toán</string>
+    <string name="txt_tab_user_project_name">Hỗ trợ giao dịch %s</string>
+
+    //create manager
+    <string name="txt_manager_title">Tiêu đề</string>
+    <string name="txt_manager_product_type">Hình thức</string>
+    <string name="txt_manager_land_type">Loại bất động sản</string>
+    <string name="txt_manager_address">Địa chỉ</string>
+    <string name="txt_manager_city">Tỉnh/Thành phố</string>
+    <string name="txt_manager_district">Quận/Huyện</string>
+    <string name="txt_manager_area">Diện tích</string>
+    <string name="txt_manager_price">Giá mong muốn</string>
+    <string name="txt_manager_description">Mô tả bất động sản ký gửi</string>
+    <string name="txt_manager_image_upload">Upload ảnh</string>
+    <string name="txt_manager_info">Thông tin liên hệ</string>
+    <string name="txt_manager_phone">Số điện thoại</string>
+
+
+    <string name="btn_booked">Đặt lịch</string>
+
+</resources>

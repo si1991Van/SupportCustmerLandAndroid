@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+            style="@style/matchParent"
+    >
+        <android.support.constraint.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+
+                <android.support.design.widget.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginStart="24dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:hint="@string/txt_full_name"
+                        android:id="@+id/telFullName"
+                        android:background="@drawable/bg_edit_radius_white" android:inputType="text"/>
+
+
+                <android.support.design.widget.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/telFullName"
+                        app:layout_constraintEnd_toEndOf="@+id/telFullName"
+                        app:layout_constraintStart_toStartOf="@+id/telFullName"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:hint="@string/txt_manager_phone"
+                        android:id="@+id/telPhone"
+                        android:background="@drawable/bg_edit_radius_white"
+                        android:inputType="text"/>
+
+
+
+
+                <android.support.design.widget.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/telPhone"
+                        app:layout_constraintEnd_toEndOf="@+id/telPhone"
+                        app:layout_constraintStart_toStartOf="@+id/telPhone"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:hint="@string/txt_update_email"
+                        android:id="@+id/telEmail"
+                        android:background="@drawable/bg_edit_radius_white"
+                        android:inputType="text"/>
+
+            <LinearLayout
+                    android:id="@+id/lnDateTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/telEmail"
+                    app:layout_constraintEnd_toEndOf="@+id/telEmail"
+                    app:layout_constraintStart_toStartOf="@+id/telEmail">
+
+                    <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:layout_marginRight="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:hint="Ngày/tháng"
+                            android:gravity="center"
+                            android:cursorVisible="false"
+                            android:windowSoftInputMode="stateHidden"
+                            android:id="@+id/telDay"
+                            android:background="@drawable/bg_edit_radius_white"
+                            android:inputType="text"/>
+
+                    <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:hint="Thời gian"
+                            android:gravity="center"
+                            android:cursorVisible="false"
+                            android:windowSoftInputMode="stateHidden"
+                            android:id="@+id/telTime"
+                            android:background="@drawable/bg_edit_radius_white"
+                            android:inputType="text"/>
+
+
+            </LinearLayout>
+
+
+            <Button
+                    android:text="@string/btn_booked"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSave" app:layout_constraintEnd_toEndOf="@+id/lnDateTime"
+                    app:layout_constraintStart_toStartOf="@+id/lnDateTime"
+                    android:background="@drawable/bg_btn_tab_phone" android:textStyle="bold"
+                    android:textColor="@color/colorWhite" app:layout_constraintTop_toBottomOf="@+id/tilNote"
+                    android:layout_marginTop="32dp"/>
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintStart_toStartOf="@+id/lnDateTime"
+                    app:layout_constraintEnd_toEndOf="@+id/lnDateTime" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lnDateTime" android:id="@+id/tilNote">
+ội
+                <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:hint="Nội dung"
+                        android:id="@+id/telNote"
+                        android:inputType="textMultiLine"
+                        android:background="@drawable/bg_edit_radius_white"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -21,7 +21,8 @@
                     android:layout_gravity="center_vertical"/>
             <TextView
                     android:text="TextView"
-                    android:layout_width="120dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="9"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtType"
                     tools:text="Thanh toán lần 6"
@@ -33,22 +34,16 @@
                     android:textColor="@color/colorText21"/>
             <TextView
                     android:text="TextView"
-                    android:layout_width="70dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     tools:layout_editor_absoluteY="240dp"
                     tools:layout_editor_absoluteX="150dp"
                     android:id="@+id/txtDateTime"
-                    tools:text="20/10/2018" android:textSize="12sp" android:textColor="@color/colorText21"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="right"
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/txtStatus" tools:text="Chưa thanh toán" android:textSize="12sp"
-                    android:textColor="@color/colorText21"/>
+                    tools:text="20/10/2018" android:textSize="12sp" android:textColor="@color/colorText21"/>
+
         </LinearLayout>
         <View style="@style/view"
               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"

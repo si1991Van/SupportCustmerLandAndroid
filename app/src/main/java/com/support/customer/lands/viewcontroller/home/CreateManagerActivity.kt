@@ -34,6 +34,7 @@ import com.support.customer.lands.utills.dialog.DialogChangeAvatar
 import com.support.customer.lands.utills.dialog.ShowAlert
 import com.support.customer.lands.utills.dialog.ShowLoading
 import com.support.customer.lands.utills.extensions.fromUrl
+import com.support.customer.lands.utills.validation.Validator
 import com.support.customer.lands.viewcontroller.profile.ProfileActivity
 import com.support.customer.lands.viewmodel.CreateManagerViewModel
 import haiphat.com.bds.nghetuvan.view.BaseActivity
@@ -266,51 +267,56 @@ class CreateManagerActivity : BaseActivity() {
 
 
     private fun addManager() {
-        ShowLoading.show(this@CreateManagerActivity)
-        vm.fullname = createManagerActivity.telFullName.text.toString()
-        vm.phone = createManagerActivity.telPhone.text.toString()
-        vm.email = createManagerActivity.telEmail.text.toString()
-        vm.title = createManagerActivity.telTilte.text.toString()
-        vm.address = createManagerActivity.telAddress.text.toString()
-        vm.area = createManagerActivity.telArea.text.toString()
-        vm.price = createManagerActivity.telPrice.text.toString()
-        vm.description = createManagerActivity.editDescription.text.toString()
-        vm.images = list.joinToString{it -> "\'${it.url}\'".replace("'", "") }
-        Log.e("Tag: ", vm.images)
-        vm.addManager(onSuccess = {
-            ShowLoading.dismiss()
-            ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it)
-            setResult(IntentActionKeys.RELOAD_DATA)
-            finish()
-        }, onFailed = {
-            ShowLoading.dismiss()
-            ShowAlert.fail(pContext = this, message = it)
-        })
+        if (Validator().validate(createManagerActivity)) {
+
+            ShowLoading.show(this@CreateManagerActivity)
+            vm.fullname = createManagerActivity.telFullName.text.toString()
+            vm.phone = createManagerActivity.telPhone.text.toString()
+            vm.email = createManagerActivity.telEmail.text.toString()
+            vm.title = createManagerActivity.telTilte.text.toString()
+            vm.address = createManagerActivity.telAddress.text.toString()
+            vm.area = createManagerActivity.telArea.text.toString()
+            vm.price = createManagerActivity.telPrice.text.toString()
+            vm.description = createManagerActivity.editDescription.text.toString()
+            vm.images = list.joinToString { it -> "\'${it.url}\'".replace("'", "") }
+            Log.e("Tag: ", vm.images)
+            vm.addManager(onSuccess = {
+                ShowLoading.dismiss()
+                ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it)
+                setResult(IntentActionKeys.RELOAD_DATA)
+                finish()
+            }, onFailed = {
+                ShowLoading.dismiss()
+                ShowAlert.fail(pContext = this, message = it)
+            })
+        }
     }
 
 
 
     private fun update() {
-        ShowLoading.show(this@CreateManagerActivity)
-        vm.fullname = createManagerActivity.telFullName.text.toString()
-        vm.phone = createManagerActivity.telPhone.text.toString()
-        vm.email = createManagerActivity.telEmail.text.toString()
-        vm.title = createManagerActivity.telTilte.text.toString()
-        vm.address = createManagerActivity.telAddress.text.toString()
-        vm.area = createManagerActivity.telArea.text.toString()
-        vm.price = createManagerActivity.telPrice.text.toString()
-        vm.description = createManagerActivity.editDescription.text.toString()
+        if (Validator().validate(createManagerActivity)) {
+            ShowLoading.show(this@CreateManagerActivity)
+            vm.fullname = createManagerActivity.telFullName.text.toString()
+            vm.phone = createManagerActivity.telPhone.text.toString()
+            vm.email = createManagerActivity.telEmail.text.toString()
+            vm.title = createManagerActivity.telTilte.text.toString()
+            vm.address = createManagerActivity.telAddress.text.toString()
+            vm.area = createManagerActivity.telArea.text.toString()
+            vm.price = createManagerActivity.telPrice.text.toString()
+            vm.description = createManagerActivity.editDescription.text.toString()
 
-        vm.images = list.joinToString{it -> "\'${it.url}\'".replace("'", "") }
-        vm.updateManager(onSuccess = {
-            ShowLoading.dismiss()
-            ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it)
-            setResult(IntentActionKeys.RELOAD_DATA)
-            finish()
-        }, onFailed = {
-            ShowLoading.dismiss()
-            ShowAlert.fail(pContext = this, message = it)
-        })
+            vm.images = list.joinToString { it -> "\'${it.url}\'".replace("'", "") }
+            vm.updateManager(onSuccess = {
+                ShowLoading.dismiss()
+                ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it)
+                setResult(IntentActionKeys.RELOAD_DATA)
+                finish()
+            }, onFailed = {
+                ShowLoading.dismiss()
+                ShowAlert.fail(pContext = this, message = it)
+            })
+        }
     }
 
 

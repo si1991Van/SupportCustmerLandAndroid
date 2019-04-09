@@ -28,6 +28,8 @@ class ForgotPasswordActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHeaderTitle(getString(R.string.text_forgot_password_title))
+        setrippleRightVisibility(View.INVISIBLE)
+
     }
 
 

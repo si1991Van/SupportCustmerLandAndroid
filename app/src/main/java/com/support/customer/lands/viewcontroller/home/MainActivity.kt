@@ -51,14 +51,14 @@ class MainActivity : BaseActivity(){
             }
 
             selectedFragment?.let {
-                supportFragmentManager.beginTransaction().replace(R.id.frame_layout, selectedFragment)
+                supportFragmentManager.beginTransaction().replace(R.id.frame_layout, selectedFragment).addToBackStack(null)
                     .commitAllowingStateLoss()
 
             }
             true
         }
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame_layout, TabPhoneFragment.newInstance(projectResponse))
+        transaction.replace(R.id.frame_layout, TabPhoneFragment.newInstance(projectResponse)).addToBackStack(null)
         transaction.commit()
 
         return mainBinding.root

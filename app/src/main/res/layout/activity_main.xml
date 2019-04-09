@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 app:itemTextColor="@drawable/bottom_navigation_colors"
                 app:itemIconTint="@drawable/bottom_navigation_colors"
+                app:labelVisibilityMode="labeled"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorBackground"
                 app:menu="@menu/bottom_navigation_items"/>

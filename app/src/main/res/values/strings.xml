@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SupportCustomerLands</string>
+    <string name="app_name">CSKH Hải Phát </string>
     <string name="text_app_name_permission">Phiên bản hệ thống 1.0 - Bản quyền thuộc về Hải Phát Land</string>
 
     // alter dialog
@@ -118,7 +118,7 @@
     <string name="txt_update_information_title">Cập nhật thông tin</string>
     <string name="txt_full_name">Họ và tên</string>
     <string name="txt_birthday">Ngày sinh</string>
-    <string name="txt_update_email">email</string>
+    <string name="txt_update_email">Email</string>
 
     <string name="change_image_select_file">Chọn ảnh</string>
     <string name="change_image_title">Đổi ảnh đại diện</string>

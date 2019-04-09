@@ -22,7 +22,7 @@ class OauthApi : BaseApi() {
         val data = HashMap<String, String>()
         data.put("phone", username ?: "")
         data.put("password", password ?: "")
-        this.upload("login", data, onResponse)
+        this.postUrlEncoded("login", data, onResponse)
     }
 
     fun logout(devicesId: String?, devicesToken: String?, onResponse: (DgmResponse) -> Unit) {

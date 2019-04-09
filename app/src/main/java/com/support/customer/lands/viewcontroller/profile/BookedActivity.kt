@@ -41,7 +41,7 @@ class BookedActivity : BaseActivity() {
         UserServices?.userInfo?.let {
             bookedBinding.telFullName.setText(it.fullname)
             bookedBinding.telEmail.setText(it.email)
-            bookedBinding.telPhone.setText(it.birthday)
+            bookedBinding.telPhone.setText(it.phone)
         }
         bookedBinding.telDay.isFocusable = true
         bookedBinding.telDay.showSoftInputOnFocus = false

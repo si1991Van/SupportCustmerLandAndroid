@@ -7,7 +7,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     signingConfigs {
         release {
-            keyAlias 'V-TechHomes@123'
+            keyAlias 'v-techHomes'
             keyPassword 'V-TechHomes@123'
             storeFile file('./keystory/realse/keystore.jks')
             storePassword 'V-TechHomes@123'
@@ -18,8 +18,8 @@ android {
         applicationId "com.support.customer.lands"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -45,7 +45,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            def project = "V-TechHomes"
+            def project = "SupportCustomers"
             def SEP = "_"
             def flavor = variant.productFlavors[0].name
             def buildType = variant.buildType.name

@@ -59,12 +59,13 @@ object OkHttpService {
 
     private fun request(request: Request, completed : (DgmResponse) ->Unit) {
         okHttpClient?.newCall(request)?.enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                val dgmResponse = DgmResponse(e)
-                Handler(Looper.getMainLooper()).post {
-                    completed(dgmResponse)
+                override fun onFailure(call: Call, e: IOException) {
+                    val dgmResponse = DgmResponse(e)
+                    Log.d("dmg: ", e.message)
+                    Handler(Looper.getMainLooper()).post {
+                        completed(dgmResponse)
+                    }
                 }
-            }
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {

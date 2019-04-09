@@ -93,6 +93,10 @@ abstract class BaseActivity : AppCompatActivity() {
         baseActivityBinding.clHeader.visibility = visibility
     }
 
+    fun setrippleRightVisibility(visibility: Int) {
+        baseActivityBinding.rippleRight.visibility = visibility
+    }
+
     override fun onBackPressed() {
         this.getCurrentFragment()?.let {
             if (it.onBackPressed()) {

@@ -26,7 +26,7 @@
                         app:layout_constraintTop_toTopOf="parent"
 
 
-                        android:drawableRight="@drawable/ic_login_password"
+
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:hint="@string/txt_full_name"
@@ -43,7 +43,7 @@
                         app:layout_constraintEnd_toEndOf="@+id/telFullName"
                         app:layout_constraintStart_toStartOf="@+id/telFullName"
 
-                        android:drawableRight="@drawable/ic_login_password"
+
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:hint="@string/txt_update_email"
@@ -61,7 +61,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/telEmail"
                         app:layout_constraintEnd_toEndOf="@+id/telEmail"
                         app:layout_constraintStart_toStartOf="@+id/telEmail"
-                        android:drawableRight="@drawable/ic_login_password"
+
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
                         android:hint="@string/txt_birthday"

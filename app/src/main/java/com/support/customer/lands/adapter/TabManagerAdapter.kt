@@ -74,5 +74,7 @@ class TabManagerAdapter(private var listMyCourse: ArrayList<ManagerResponse>?, v
 
             itemView.txtStatus.text = response?.status?.statusConsignment()
         }
+
+
     }
 }

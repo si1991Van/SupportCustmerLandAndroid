@@ -1,6 +1,7 @@
 package com.support.customer.lands.services.api
 
 import android.text.TextUtils
+import android.util.Log
 import com.support.customer.lands.services.DgmResponse
 import com.support.customer.lands.services.GsonUtil
 import com.support.customer.lands.services.OkHttpService
@@ -39,9 +40,10 @@ abstract class BaseApi {
             OkHttpService.Method.DELETE, makeBody(body), headerBuilder, completed)
     }
 
-    protected fun post(method: String, body: Map<String, String>, completed: (DgmResponse)->Unit) {
+    fun post(method: String, body: Map<String, String>, completed: (DgmResponse)->Unit) {
         val headerBuilder = Headers.Builder()
         headerBuilder.add("Content-Type", "application/json")
+        Log.e("tag: ", method)
         this.request(this.getEndPoint() + "/" + this.apiUrl() + method,
             OkHttpService.Method.POST, makeBody(body), headerBuilder, completed)
     }
@@ -67,12 +69,12 @@ abstract class BaseApi {
             OkHttpService.Method.POST, makeUrlEncodeBody(body), headerBuilder)
     }
 
-    protected fun upload(method: String, builder: MultipartBody.Builder, completed: (DgmResponse)->Unit) {
+    fun upload(method: String, builder: MultipartBody.Builder, completed: (DgmResponse)->Unit) {
         this.request(this.getEndPoint() + "/" + this.apiUrl() + method,
             OkHttpService.Method.POST, builder.build(), null, completed)
     }
 
-    protected fun upload(method: String, body: Map<String, String>, completed: (DgmResponse)->Unit) {
+    fun upload(method: String, body: Map<String, String>, completed: (DgmResponse)->Unit) {
         this.request(this.getEndPoint() + "/" + this.apiUrl() + method,
             OkHttpService.Method.POST, makeUrlEncodeBody(body), null, completed)
     }

@@ -63,7 +63,7 @@ class UpdateProfileActivity : BaseActivity() {
         updateProfileActivity.telBirthday.showSoftInputOnFocus = false
 
         updateProfileActivity.telBirthday.setOnClickListener {
-            CommonUtil.showDatePickerDialog(this@UpdateProfileActivity, updateProfileActivity.telBirthday)
+            CommonUtil.showDatePickerDialogs(this@UpdateProfileActivity, updateProfileActivity.telBirthday)
         }
     }
 }

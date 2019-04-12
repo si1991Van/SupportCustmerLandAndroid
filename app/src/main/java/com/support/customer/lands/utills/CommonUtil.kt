@@ -58,23 +58,24 @@ object CommonUtil {
     }
 
 
-    fun showDatePickerDialog(activity: Activity?, editText: EditText?) {
+    fun showDatePickerDialogs(activity: Activity?, editText: TextView?) {
         val newCalendar = Calendar.getInstance()
         var dateFormatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
         val fromDatePickerDialog =
             DatePickerDialog(activity, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 val newDate = Calendar.getInstance()
                 newDate.set(year, monthOfYear, dayOfMonth)
-                editText?.setText(dateFormatter.format(newDate.time))
+                editText?.text = dateFormatter.format(newDate.time)
+//                editText?.setText(dateFormatter.format(newDate.time))
             }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH))
         fromDatePickerDialog.show()
     }
 
-    fun showTimePickerDialog(activity: Activity, edTime: EditText?) {
+    fun showTimePickerDialog(activity: Activity, edTime: TextView?) {
         var calendar = Calendar.getInstance()
         val timePickerDialog =
             TimePickerDialog(activity, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                edTime?.setText(hourOfDay.toString() + ":" + minute)
+                edTime?.text = hourOfDay.toString() + ":" + minute
             }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true)
         timePickerDialog.show()
     }

@@ -24,6 +24,7 @@
     <string name="text_validate_require_field_email">Email không được để trống</string>
     <string name="text_validate_email_invalid">Email không đúng định dạng</string>
     <string name="text_validate_require_field_password">Mật khẩu không được để trống</string>
+
     <string name="text_validate_require_field_confirm_password">Xác nhận mật khẩu không được để trống</string>
     <string name="change_password_error_new_password_not_equal">Mật khẩu và mật khẩu xác nhận không giống nhau</string>
     <string name="text_validate_require_field_name">Tên không được để trống</string>
@@ -39,6 +40,7 @@
     <string name="text_validate_require_field_title">Tiêu đề không được để trống</string>
     <string name="text_validate_require_field_area">Diện tích không được để trống</string>
     <string name="text_validate_require_field_price">Giá không được để trống</string>
+    <string name="text_validate_require_field_description">Mô tả không được để trống</string>
     <string name="text_choose_email_client">Chọn một email client</string>
 
     <string name="text_no_data">Chưa có dữ liệu</string>
@@ -59,8 +61,8 @@
 
     //home
     <string name="tab_phone">Tổng đài</string>
-    <string name="tab_history">Giao dịch</string>
-    <string name="tab_newpager">dự án</string>
+    <string name="tab_history">Lịch sử</string>
+    <string name="tab_newpager">Dự án</string>
     <string name="tab_users">Sale</string>
     <string name="tab_utilities">Ký gửi</string>
     //tab phone

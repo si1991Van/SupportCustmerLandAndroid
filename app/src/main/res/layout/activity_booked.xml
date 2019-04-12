@@ -74,7 +74,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/telEmail"
                     app:layout_constraintStart_toStartOf="@+id/telEmail">
 
-                    <android.support.design.widget.TextInputEditText
+                    <TextView
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_weight="1"
@@ -82,14 +82,13 @@
                             android:paddingLeft="20dp"
                             android:paddingRight="20dp"
                             android:hint="Ngày/tháng"
-                            android:gravity="center"
                             android:cursorVisible="false"
-                            android:windowSoftInputMode="stateHidden"
+                            android:gravity="center"
                             android:id="@+id/telDay"
                             android:background="@drawable/bg_edit_radius_white"
                             android:inputType="text"/>
 
-                    <android.support.design.widget.TextInputEditText
+                    <TextView
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_weight="1"
@@ -128,7 +127,10 @@
                 <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
                         android:hint="Nội dung"
                         android:id="@+id/telNote"
                         android:inputType="textMultiLine"

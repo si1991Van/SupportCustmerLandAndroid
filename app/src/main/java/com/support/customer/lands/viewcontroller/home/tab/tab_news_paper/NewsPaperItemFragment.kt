@@ -25,31 +25,28 @@ class NewsPaperItemFragment: BaseFragment() , SwipeRefreshLayout.OnRefreshListen
     var vm = TabNewsViewModel()
     var rootView: View? = null
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         dataBindingFragmentNewsInfo = DataBindingUtil.inflate(inflater, R.layout.fragment_project_progress, container, false)
         rootView = dataBindingFragmentNewsInfo.root
-
-        if (userVisibleHint && !isDataLoaded()) {
-            getItem()
-        }
-
+        getItem()
         dataBindingFragmentNewsInfo.swipeRefreshLayout.setOnRefreshListener(this)
         return rootView
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        if (!isVisibleToUser || rootView == null) {
-            return
-        }
-        if (!isDataLoaded()) {
-            getItem()
-        }
-    }
+//    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+//        super.setUserVisibleHint(isVisibleToUser)
+//        if (!isVisibleToUser || rootView == null) {
+//            return
+//        }
+//        if (!isDataLoaded()) {
+//            getItem()
+//        }
+//    }
 
-    private fun initAdapter(list: ArrayList<NewsPaperItemResponse>?){
+    private fun initAdapter(){
         val recyclerView = dataBindingFragmentNewsInfo.rivProjectProgress
-        val adapter = NewPaperItemAdapter(list, onClick = {
+        val adapter = NewPaperItemAdapter(vm.list, onClick = {
             val intent = Intent(activity, NewsDetailActivity::class.java)
             intent.putExtra(IntentActionKeys.KEY_NEWS_DETAIL, it?.let { it1 -> GsonUtil.toJson(it1) })
             startActivity(intent)
@@ -61,11 +58,22 @@ class NewsPaperItemFragment: BaseFragment() , SwipeRefreshLayout.OnRefreshListen
 
 
     private fun getItem(){
+        if(isDataLoaded()){
+            initAdapter()
+            dataBindingFragmentNewsInfo.swipeRefreshLayout.isRefreshing = false
+            return
+        }else{
+            loadData()
+        }
+    }
+
+
+    private fun loadData(){
         dataBindingFragmentNewsInfo.swipeRefreshLayout.isRefreshing = true
         vm.getItem(onSuccess = {
             dataBindingFragmentNewsInfo.swipeRefreshLayout.isRefreshing = false
-            initAdapter(it)
             vm.list = it
+            initAdapter()
             if (it != null && it?.size > 0){
                 dataBindingFragmentNewsInfo.txtNoData.visibility = View.GONE
             }else dataBindingFragmentNewsInfo.txtNoData.visibility = View.VISIBLE
@@ -75,9 +83,8 @@ class NewsPaperItemFragment: BaseFragment() , SwipeRefreshLayout.OnRefreshListen
         })
     }
 
-
     override fun onRefresh() {
-        getItem()
+        loadData()
     }
 
     private fun isDataLoaded(): Boolean {

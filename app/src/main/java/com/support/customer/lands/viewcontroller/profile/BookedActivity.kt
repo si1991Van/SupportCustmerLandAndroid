@@ -1,10 +1,14 @@
 package com.support.customer.lands.viewcontroller.profile
 
+import android.annotation.SuppressLint
 import android.databinding.DataBindingUtil
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
+import android.util.Log
+import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import com.support.customer.lands.R
 import com.support.customer.lands.databinding.ActivityBookedBinding
 import com.support.customer.lands.services.UserServices
@@ -15,7 +19,11 @@ import com.support.customer.lands.viewmodel.BookedViewModel
 import haiphat.com.bds.nghetuvan.view.BaseActivity
 import kotlinx.android.synthetic.main.activity_booked.*
 
-class BookedActivity : BaseActivity() {
+
+class BookedActivity : BaseActivity(){
+
+
+
 
     private lateinit var bookedBinding: ActivityBookedBinding
     private var vm = BookedViewModel()
@@ -36,6 +44,7 @@ class BookedActivity : BaseActivity() {
         setHeaderTitle(getString(R.string.txt_profile_booked))
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun initView(){
         UserServices?.userInfo?.let {
@@ -43,20 +52,20 @@ class BookedActivity : BaseActivity() {
             bookedBinding.telEmail.setText(it.email)
             bookedBinding.telPhone.setText(it.phone)
         }
-        bookedBinding.telDay.isFocusable = true
         bookedBinding.telDay.showSoftInputOnFocus = false
 
         bookedBinding.telDay.setOnClickListener {
-            CommonUtil.showDatePickerDialog(this@BookedActivity, bookedBinding.telDay)
+            CommonUtil.showDatePickerDialogs(this@BookedActivity, bookedBinding.telDay)
         }
 
-        bookedBinding.telTime.isFocusable = true
+
         bookedBinding.telTime.showSoftInputOnFocus = false
 
         bookedBinding.telTime.setOnClickListener {
             CommonUtil.showTimePickerDialog(this@BookedActivity, bookedBinding.telTime)
         }
     }
+
 
     private fun booked(){
         ShowLoading.show(this@BookedActivity)

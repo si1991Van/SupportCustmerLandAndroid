@@ -48,7 +48,6 @@ class CreateManagerActivity : BaseActivity() {
     lateinit var createManagerActivity: ActivityCreateManagerBinding
     var vm = CreateManagerViewModel()
     var list = ArrayList<LinkResponse>()
-//    var list = ArrayList<String>()
 
 
 
@@ -94,7 +93,7 @@ class CreateManagerActivity : BaseActivity() {
             createManagerActivity.telAddress.setText(vm?.managerResponse?.address)
             createManagerActivity.telArea.setText(vm?.managerResponse?.area.toString())
             createManagerActivity.telPrice.setText(vm?.managerResponse?.price.toString())
-            createManagerActivity.editDescription.setText(vm?.managerResponse?.description)
+            createManagerActivity.telDescription.setText(vm?.managerResponse?.description)
 
             setValueUpdateSpinner(createManagerActivity.spinner6, response?.price_type, vm.managerResponse?.price_type)
             setValueUpdateSpinner(createManagerActivity.spinner5, response?.area, vm.managerResponse?.area_type)
@@ -267,6 +266,9 @@ class CreateManagerActivity : BaseActivity() {
 
 
     private fun addManager() {
+        if(list.isEmpty() || list.size == 0){
+            ShowAlert.fail(pContext = this@CreateManagerActivity, message = "Bạn cần phải đăng ít nhất là một ảnh!")
+        }
         if (Validator().validate(createManagerActivity)) {
 
             ShowLoading.show(this@CreateManagerActivity)
@@ -277,9 +279,8 @@ class CreateManagerActivity : BaseActivity() {
             vm.address = createManagerActivity.telAddress.text.toString()
             vm.area = createManagerActivity.telArea.text.toString()
             vm.price = createManagerActivity.telPrice.text.toString()
-            vm.description = createManagerActivity.editDescription.text.toString()
+            vm.description = createManagerActivity.telDescription.text.toString()
             vm.images = list.joinToString { it -> "\'${it.url}\'".replace("'", "") }
-            Log.e("Tag: ", vm.images)
             vm.addManager(onSuccess = {
                 ShowLoading.dismiss()
                 ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it)
@@ -304,7 +305,7 @@ class CreateManagerActivity : BaseActivity() {
             vm.address = createManagerActivity.telAddress.text.toString()
             vm.area = createManagerActivity.telArea.text.toString()
             vm.price = createManagerActivity.telPrice.text.toString()
-            vm.description = createManagerActivity.editDescription.text.toString()
+            vm.description = createManagerActivity.telDescription.text.toString()
 
             vm.images = list.joinToString { it -> "\'${it.url}\'".replace("'", "") }
             vm.updateManager(onSuccess = {

@@ -29,9 +29,9 @@ class TabNewsPaperFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         tabNewsPaperFragment = DataBindingUtil.inflate(inflater, R.layout.fragment_tab_news_paper, container, false)
         (activity as MainActivity).setHeaderTitle(getString(R.string.title_project))
-        if (userVisibleHint && !isDataLoaded()) {
+//        if (userVisibleHint && !isDataLoaded()) {
             getCategory()
-        }
+//        }
         rootView = tabNewsPaperFragment.root
         return rootView
     }
@@ -56,19 +56,19 @@ class TabNewsPaperFragment : BaseFragment() {
         })
     }
 
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        if (!isVisibleToUser || rootView == null) {
-            return
-        }
-        if (!isDataLoaded()) {
-            getCategory()
-        }
-    }
-
-    private fun isDataLoaded(): Boolean {
-        return vm.list != null && vm.list?.size!! > 0
-    }
+//    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+//        super.setUserVisibleHint(isVisibleToUser)
+//        if (!isVisibleToUser || rootView == null) {
+//            return
+//        }
+//        if (!isDataLoaded()) {
+//            getCategory()
+//        }
+//    }
+//
+//    private fun isDataLoaded(): Boolean {
+//        return vm.list != null && vm.list?.size!! > 0
+//    }
 
     inner class SectionsPagerNewsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

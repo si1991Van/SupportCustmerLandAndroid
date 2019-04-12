@@ -28,6 +28,7 @@ class TabPhoneFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         tabPhoneFragment = DataBindingUtil.inflate(inflater, R.layout.fragment_tab_phone, container, false)
         (activity as MainActivity).setHeaderTitle(vm.projectResponse?.name)
+        tabPhoneFragment.txtNameProject.text = vm.projectResponse?.name
         tabPhoneFragment.btnHotline.text = vm.projectResponse?.hotline?.let {
             getString(R.string.txt_hotline, it)
         } ?: getString(R.string.txt_hotline, "Chưa cập nhật")
@@ -37,6 +38,7 @@ class TabPhoneFragment : BaseFragment() {
         vm.projectResponse?.rank_project?.let {
             tabPhoneFragment.rating.rating = it.toFloat()
         }
+
         tabPhoneFragment.imgLogo.fromUrl(vm.projectResponse?.image_url, placeHolder = R.drawable.ic_logo)
         tabPhoneFragment.rating.setIsIndicator(true)
         if (vm.projectResponse?.rank_project == 0) {

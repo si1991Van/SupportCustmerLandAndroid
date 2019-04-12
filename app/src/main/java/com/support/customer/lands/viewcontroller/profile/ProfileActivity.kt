@@ -104,7 +104,7 @@ class ProfileActivity : BaseActivity() {
 
         }
         profileBinding.ripSendEmail.setOnRippleCompleteListener {
-            CommonUtil.clickSendMail(this@ProfileActivity, "sivannguyen1991@gmail.com")
+            CommonUtil.clickSendMail(this@ProfileActivity, "vtechhomes@gmail.com")
         }
         profileBinding.ripInfo.setOnRippleCompleteListener {
 

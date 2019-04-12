@@ -3,17 +3,16 @@ package com.support.customer.lands.utills.extensions
 fun Int.statusConsignment(): String?{
     when(this){
         1 ->{
-            return "Cho xac nhan"
+            return "Chờ xác nhận"
         }
-
         2 ->{
-            return "Da nhan"
+            return "Đã nhận"
         }
         3 ->{
-            return "Hoan thanh"
+            return "Hoàn thành"
         }
         4 ->{
-            return "Da huy"
+            return "Đã huỷ"
         }
 
     }

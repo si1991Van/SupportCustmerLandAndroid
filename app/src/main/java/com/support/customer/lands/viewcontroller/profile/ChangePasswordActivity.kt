@@ -21,16 +21,23 @@ class ChangePasswordActivity : BaseActivity() {
             vm.odlPassword = changePasswordBinding.telOldPassword.text.toString()
             vm.newPassword = changePasswordBinding.telNewPassword.text.toString()
             vm.newConfirmPassword = changePasswordBinding.telNewConfirmPassword.text.toString()
-            ShowLoading.show(this@ChangePasswordActivity)
-            vm.changePassword(onSuccess = {
-                ShowLoading.dismiss()
-                ShowAlert.fail(pContext = this, dialogTitle = getString(R.string.alert_title_inform), message = it, onClick = {
-                    finish()
+            if (vm.validate(this)!!) {
+
+                ShowLoading.show(this@ChangePasswordActivity)
+                vm.changePassword(onSuccess = {
+                    ShowLoading.dismiss()
+                    ShowAlert.fail(
+                        pContext = this,
+                        dialogTitle = getString(R.string.alert_title_inform),
+                        message = it,
+                        onClick = {
+                            finish()
+                        })
+                }, onFailed = {
+                    ShowLoading.dismiss()
+                    ShowAlert.fail(pContext = this, message = it)
                 })
-            }, onFailed = {
-                ShowLoading.dismiss()
-                ShowAlert.fail(pContext = this, message = it)
-            })
+            }
         }
 
         return changePasswordBinding.root

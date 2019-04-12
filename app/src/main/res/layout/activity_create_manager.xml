@@ -165,7 +165,9 @@
                         android:text="@{createManagerViewModel.area}"
                         app:validateRequiredErrorMessage="@{@string/text_validate_require_field_area}"
 
-                        android:hint="@string/txt_manager_area" android:id="@+id/telArea" android:inputType="number"
+                        android:hint="@string/txt_manager_area"
+                        android:id="@+id/telArea"
+                        android:inputType="numberDecimal"
                 />
             </android.support.design.widget.TextInputLayout>
 
@@ -201,7 +203,8 @@
                         android:text="@{createManagerViewModel.price}"
                         app:validateRequiredErrorMessage="@{@string/text_validate_require_field_price}"
 
-                        android:hint="@string/txt_manager_price" android:id="@+id/telPrice" android:inputType="number"
+                        android:hint="@string/txt_manager_price" android:id="@+id/telPrice"
+                        android:inputType="numberDecimal"
                 />
             </android.support.design.widget.TextInputLayout>
             <android.support.constraint.ConstraintLayout
@@ -222,31 +225,46 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <EditText
+
+
+            <android.support.design.widget.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:ems="10"
-                    android:id="@+id/editDescription"
                     android:layout_marginTop="16dp"
+                    android:id="@+id/tilDescription"
                     app:layout_constraintStart_toStartOf="@+id/tilPrice"
                     app:layout_constraintEnd_toEndOf="@+id/lnPrice"
-                    app:layout_constraintTop_toBottomOf="@+id/tilPrice"
-                    android:hint="@string/txt_manager_description"/>
+                    app:layout_constraintTop_toBottomOf="@+id/tilPrice">
+
+                <android.support.design.widget.TextInputEditText
+                        android:id="@+id/telDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{createManagerViewModel.description}"
+                    app:validateRequiredErrorMessage="@{@string/text_validate_require_field_description}"
+
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+
+                    android:hint="@string/txt_manager_description"
+                />
+            </android.support.design.widget.TextInputLayout>
+
 
             <android.support.constraint.ConstraintLayout
                     android:id="@+id/clUploadImage"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="@+id/editDescription"
-                    app:layout_constraintEnd_toEndOf="@+id/editDescription"
-                    app:layout_constraintTop_toBottomOf="@+id/editDescription"
+                    app:layout_constraintStart_toStartOf="@+id/tilDescription"
+                    app:layout_constraintEnd_toEndOf="@+id/tilDescription"
+                    app:layout_constraintTop_toBottomOf="@+id/tilDescription"
                     android:background="@color/colorBackgroundUploadImage">
 
                 <ImageView
                         android:layout_width="20dp"
-                        android:layout_height="20dp" app:srcCompat="@drawable/ic_arrow_alt_circle_right"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/ic_upload"
                         android:id="@+id/imageView6" android:layout_marginTop="8dp"
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
